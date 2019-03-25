@@ -97,7 +97,7 @@ build-commands:
     --remove-key="GenericName"
     "XnView/XnView.desktop";
     cat "XnViewMP-desktop.txt" >> "XnView/XnView.desktop";
-    install -p -D -m 0644 "XnView/XnView.desktop" -t "${FLATPAK_DEST}/share/applications/";
+    install -p -D -m 0644 "XnView/XnView.desktop" "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop";
   - install -p -D -m 0644 "${FLATPAK_ID}.appdata.xml" -t "${FLATPAK_DEST}/share/appdata/";
 post-install:
   - install -p -D -m 0644 "XnView"/*.txt -t "${FLATPAK_DEST}/share/doc/XnViewMP/";
